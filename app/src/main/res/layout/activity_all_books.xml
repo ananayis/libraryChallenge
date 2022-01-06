@@ -7,4 +7,11 @@
     tools:context=".AllBooksActivity"
     android:background="@color/purple_200">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/booksRecView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:layout_margin="10dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
