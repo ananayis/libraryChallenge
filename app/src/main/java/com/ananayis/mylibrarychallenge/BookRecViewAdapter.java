@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.TransitionManager;
 import androidx.viewpager2.adapter.FragmentViewHolder;
 
 import com.bumptech.glide.Glide;
@@ -50,6 +52,20 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
             }
         });
 
+        holder.txtAuthor.setText(books.get(position).getAuthor());
+        holder.txtShort.setText(books.get(position).getShortDesc());
+
+
+        if (books.get(position).isExpanded()){
+            TransitionManager.beginDelayedTransition(holder.parent);
+            holder.expandedRelLayout.setVisibility(View.VISIBLE);
+            holder.downArrow.setVisibility(View.GONE);
+        }else {
+            TransitionManager.beginDelayedTransition(holder.parent);
+            holder.expandedRelLayout.setVisibility(View.GONE);
+            holder.downArrow.setVisibility(View.VISIBLE);
+        }
+
     }
 
     @Override
@@ -66,11 +82,41 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
         private CardView parent;
         private ImageView image;
         private TextView txtName;
+
+        private RelativeLayout expandedRelLayout;
+        private ImageView upArrow, downArrow;
+        private TextView txtAuthor, txtShort;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             parent = itemView.findViewById(R.id.parent);
             image = itemView.findViewById(R.id.image);
             txtName = itemView.findViewById(R.id.txtName);
+
+            expandedRelLayout = itemView.findViewById(R.id.expandedRelLayout);
+            upArrow = itemView.findViewById(R.id.upArrow);
+            downArrow = itemView.findViewById(R.id.downArrow);
+            txtAuthor = itemView.findViewById(R.id.txtAuthor);
+            txtShort = itemView.findViewById(R.id.txtShort);
+
+            downArrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Book book = books.get(getAdapterPosition());
+                    book.setExpanded(!book.isExpanded());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
+
+
+            upArrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Book book = books.get(getAdapterPosition());
+                    book.setExpanded(!book.isExpanded());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
 
 
         }
