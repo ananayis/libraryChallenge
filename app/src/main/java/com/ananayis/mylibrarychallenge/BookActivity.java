@@ -2,6 +2,7 @@ package com.ananayis.mylibrarychallenge;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -22,11 +23,23 @@ public class BookActivity extends AppCompatActivity {
 
         initViews();
 
-        Book book = new Book(2, "Legend", "David Gammell" , 320, "https://i.ebayimg.com/images/g/zsYAAOSwOOZguT01/s-l300.jpg" ,
-                "This is the first and most famous novel of this writer.", "The Drenai Empire is under threat. The tribal Nadir people have been united for the first time by the great warleader Ulric, who has forged a massive empire in the North. ");
+//        Book book = new Book(2, "Legend", "David Gammell" , 320, "https://i.ebayimg.com/images/g/zsYAAOSwOOZguT01/s-l300.jpg" ,
+//                "This is the first and most famous novel of this writer.", "The Drenai Empire is under threat. The tribal Nadir people have been united for the first time by the great warleader Ulric, who has forged a massive empire in the North. ");
+
+        Intent intent = getIntent();
+        if (null != intent){
+            int bookId = intent.getIntExtra("bookId", -1);
+            if (bookId != -1){
+                Book incomingBook = Utils.getInstance().getBookById(bookId);
+                if (null != incomingBook){
+                    setData(incomingBook);
+                }
+
+            }
+        }
 
 
-        setData(book);
+
 
 
     }
