@@ -29,7 +29,7 @@ public class AllBooksActivity extends AppCompatActivity {
 
         books.add(new Book(2, "Legend", "David Gammell" , 320, "https://i.ebayimg.com/images/g/zsYAAOSwOOZguT01/s-l300.jpg" ,
                 "This is the first and most famous novel of this writer.", "The Drenai Empire is under threat. The tribal Nadir people have been united for the first time by the great warleader Ulric, who has forged a massive empire in the North. "));
-        
+
 
         adapter.setBooks(books);
 

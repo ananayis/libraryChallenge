@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookActivity">
+
+    <ImageView
+        android:id="@+id/imgBook"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"
+        android:src="@mipmap/ic_launcher"/>
+
+    <Button
+        android:id="@+id/btnAddCurrently"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="Currently Reading"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnAlreadyRead"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Already Read"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddWantToReed"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnAddWantToReed"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddWantToReed" />
+
+    <Button
+        android:id="@+id/btnAddWantToReed"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Want To Reed"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddCurrently"
+        app:layout_constraintStart_toStartOf="@+id/btnAddCurrently"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddCurrently" />
+
+    <Button
+        android:id="@+id/btnAddFavorite"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Add To favorites"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/btnAlreadyRead"
+        app:layout_constraintStart_toStartOf="@+id/btnAlreadyRead"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlreadyRead" />
+
+    <TextView
+        android:id="@+id/bookTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="Book Name"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/bookNameTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bookNameTxt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/bookNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="200dp"
+        android:text="Legend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBook" />
+
+    <TextView
+        android:id="@+id/authorTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Author"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/bookTxt"
+        app:layout_constraintTop_toBottomOf="@+id/bookTxt" />
+
+    <TextView
+        android:id="@+id/authorNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="David Gammell"
+        app:layout_constraintStart_toStartOf="@+id/bookNameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/bookNameTxt" />
+
+    <TextView
+        android:id="@+id/pagesTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="pages"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/authorTxt"
+        app:layout_constraintTop_toBottomOf="@+id/authorTxt" />
+
+    <TextView
+        android:id="@+id/pagesNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="350"
+        app:layout_constraintStart_toStartOf="@+id/authorNameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/authorNameTxt" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Description"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/pagesTxt"
+        app:layout_constraintTop_toBottomOf="@+id/pagesTxt" />
+
+    <TextView
+        android:id="@+id/descriptionTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:text="Long Description"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddCurrently"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+</androidx.constraintlayout.widget.ConstraintLayout>
