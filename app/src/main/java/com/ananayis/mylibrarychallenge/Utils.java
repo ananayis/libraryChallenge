@@ -88,4 +88,32 @@ public class Utils {
         return null;
 
     }
+
+    public boolean addToAlreadyRead (Book book){
+        if (!alreadyRead.contains(book)){
+            return alreadyRead.add(book);
+        }
+        return false;
+    }
+
+    public boolean addToWantToRead (Book book){
+        if (!wantToRead.contains(book)){
+            return wantToRead.add(book);
+        }
+        return false;
+    }
+
+    public boolean addToCurrently (Book book){
+        if (!currently.contains(book)){
+            return currently.add(book);
+        }
+        return false;
+    }
+
+    public boolean addToFavorite (Book book){
+        if (!favorite.contains(book)){
+            return favorite.add(book);
+        }
+        return false;
+    }
 }
