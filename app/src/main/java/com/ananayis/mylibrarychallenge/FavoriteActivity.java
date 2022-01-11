@@ -15,7 +15,7 @@ public class FavoriteActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.favoriteRec);
 
-        BookRecViewAdapter adapter = new BookRecViewAdapter(this);
+        BookRecViewAdapter adapter = new BookRecViewAdapter(this,"favoriteBook");
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter.setBooks(Utils.getFavorite());

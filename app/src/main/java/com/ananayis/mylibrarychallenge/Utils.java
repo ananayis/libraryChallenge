@@ -116,4 +116,20 @@ public class Utils {
         }
         return false;
     }
+
+    public boolean removeFromAlreadyRead(Book book){
+        return alreadyRead.remove(book);
+    }
+
+    public boolean removeFromWantToRead(Book book){
+        return wantToRead.remove(book);
+    }
+
+    public boolean removeFromCurrentlyReading (Book book){
+        return currently.remove(book);
+    }
+
+    public boolean removeFromFavorite (Book book){
+        return favorite.remove(book);
+    }
 }
