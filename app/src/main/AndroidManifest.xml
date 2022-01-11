@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ananayis.mylibrarychallenge" >
+    package="com.ananayis.mylibrarychallenge">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,34 +10,37 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyLibraryChallenge" >
+        android:theme="@style/Theme.MyLibraryChallenge">
+        <activity
+            android:name=".WebsiteActivity"
+            android:exported="false" />
         <activity
             android:name=".FavoriteActivity"
             android:exported="false"
-            android:label="Favorites Book"/>
+            android:label="Favorites Book" />
         <activity
             android:name=".CurrentlyActivity"
             android:exported="false"
-            android:label="Currently Reading Book"/>
+            android:label="Currently Reading Book" />
         <activity
             android:name=".WantToReadActivity"
             android:exported="false"
-            android:label="Want To Reed Book"/>
+            android:label="Want To Reed Book" />
         <activity
             android:name=".AlreadyReadActivity"
             android:exported="false"
-            android:label="Already Read Book"/>
+            android:label="Already Read Book" />
         <activity
             android:name=".BookActivity"
-            android:label="Book"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Book" />
         <activity
             android:name=".AllBooksActivity"
             android:exported="false"
-            android:label="All Book"/>
+            android:label="All Book" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
