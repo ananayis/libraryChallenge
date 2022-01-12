@@ -35,7 +35,7 @@ public class BookActivity extends AppCompatActivity {
         if (null != intent){
             int bookId = intent.getIntExtra("bookId", -1);
             if (bookId != -1){
-                Book incomingBook = Utils.getInstance().getBookById(bookId);
+                Book incomingBook = Utils.getInstance(this).getBookById(bookId);
                 if (null != incomingBook){
                     setData(incomingBook);
 
@@ -79,7 +79,7 @@ public class BookActivity extends AppCompatActivity {
 
         private void handleAlreadyRead(Book book){
 
-            ArrayList<Book> alreadyReadBook = Utils.getInstance().getAlreadyRead();
+            ArrayList<Book> alreadyReadBook = Utils.getInstance(this).getAlreadyRead();
 
             boolean existInAlreadyReadBooks = false;
 
@@ -94,7 +94,7 @@ public class BookActivity extends AppCompatActivity {
                 btnAlreadyRead.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (Utils.getInstance().addToAlreadyRead(book)){
+                        if (Utils.getInstance(BookActivity.this).addToAlreadyRead(book)){
                             Toast.makeText(BookActivity.this,"Book added",Toast.LENGTH_SHORT).show();
 
                             btnAlreadyRead.setEnabled(false);
@@ -109,7 +109,7 @@ public class BookActivity extends AppCompatActivity {
         }
 
         private void handleWantToRead(final Book book){
-            ArrayList<Book> wantToRead = Utils.getInstance().getWantToRead();
+            ArrayList<Book> wantToRead = Utils.getInstance(this).getWantToRead();
 
             boolean existInWantToReadBooks = false;
 
@@ -124,7 +124,7 @@ public class BookActivity extends AppCompatActivity {
                 btnAddWantToReed.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (Utils.getInstance().addToWantToRead(book)){
+                        if (Utils.getInstance(BookActivity.this).addToWantToRead(book)){
                             Toast.makeText(BookActivity.this,"Book added",Toast.LENGTH_SHORT).show();
 
                             btnAddWantToReed.setEnabled(false);
@@ -139,7 +139,7 @@ public class BookActivity extends AppCompatActivity {
         }
 
         private void handleCurrently(final Book book){
-            ArrayList<Book> currently = Utils.getInstance().getCurrently();
+            ArrayList<Book> currently = Utils.getInstance(this).getCurrently();
 
             boolean existInCurrently = false;
 
@@ -154,7 +154,7 @@ public class BookActivity extends AppCompatActivity {
                 btnAddCurrently.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (Utils.getInstance().addToCurrently(book)){
+                        if (Utils.getInstance(BookActivity.this).addToCurrently(book)){
                             Toast.makeText(BookActivity.this,"Book added",Toast.LENGTH_SHORT).show();
 
                             btnAddWantToReed.setEnabled(false);
@@ -169,7 +169,7 @@ public class BookActivity extends AppCompatActivity {
         }
 
         private void handleFavorite(final Book book){
-            ArrayList<Book> favorite = Utils.getInstance().getFavorite();
+            ArrayList<Book> favorite = Utils.getInstance(this).getFavorite();
 
             boolean existInFavorite = false;
 
@@ -184,7 +184,7 @@ public class BookActivity extends AppCompatActivity {
                 btnAddFavorite.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (Utils.getInstance().addToFavorite(book)){
+                        if (Utils.getInstance(BookActivity.this).addToFavorite(book)){
                             Toast.makeText(BookActivity.this,"Book added",Toast.LENGTH_SHORT).show();
 
                             btnAddFavorite.setEnabled(false);
